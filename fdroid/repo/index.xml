@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wilson Jarvis</title>
+  <link href="https://hermesplayground2.github.io/wilson-jarvis-ui/fdroid/repo" rel="self" />
+  <link href="https://hermesplayground2.github.io/wilson-jarvis-ui/" />
+  <updated>2026-09-06T00:00:00Z</updated>
+  <author><name>Viktor</name></author>
+  <id>wilson-jarvis-ui</id>
+  <entry>
+    <title>Wilson Jarvis</title>
+    <link rel="alternate" href="https://hermesplayground2.github.io/wilson-jarvis-ui/" />
+    <updated>2026-09-06T00:00:00Z</updated>
+    <id>wilson-jarvis-ui-1</id>
+    <category term="Wilson Jarvis" scheme="https://hermesplayground2.github.io/wilson-jarvis-ui/" label="Wilson Jarvis" />
+    <summary>Wilson Jarvis Command Interface</summary>
+    <description>Wilson Jarvis mobile interface with live watchlist, memory overview, and humanity-guide mode.</description>
+    <author name="Viktor" />
+    <license>Apache-2.0</license>
+    <source>https://github.com/Hermesplayground2/wilson-jarvis-ui</source>
+    <package>
+      <repository>
+        <fdroid>
+          <icon fdroid:version="1.0" fdroid:branch="master" fdroid:commit="edb8f65" fdroid:build="1" />
+        </fdroid>
+      </repository>
+    </package>
+  </entry>
+</feed>
