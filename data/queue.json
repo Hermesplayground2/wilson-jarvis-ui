@@ -1,0 +1,9 @@
+{
+  "pending": 3,
+  "total": 5,
+  "items": [
+    {"title":"Watchlist macro catalysts","status":"pending"},
+    {"title":"Context Doctor cleanup","status":"pending"},
+    {"title":"Tailscale install retry","status":"blocked"}
+  ]
+}

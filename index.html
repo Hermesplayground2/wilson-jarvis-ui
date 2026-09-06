@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#020408">
+<title>Wilson // Jarvis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    height: 100%;
+    background: #020408;
+    color: #c8e6ff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    overflow: hidden;
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #020a12;
+    border-bottom: 1px solid #0b1d2e;
+    flex-shrink: 0;
+  }
+  .brand {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7be2ff;
+    text-shadow: 0 0 18px rgba(123, 226, 255, 0.35);
+  }
+  .status {
+    font-size: 11px;
+    color: #6a8a9a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #5aff7a;
+    box-shadow: 0 0 10px rgba(90, 255, 122, 0.6);
+  }
+  .panes {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .pane {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    padding: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pane.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .pane h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #3c7a99;
+    margin-bottom: 12px;
+  }
+  .card {
+    background: #0a1620;
+    border-left: 2px solid #0b1d2e;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 0 8px 8px 0;
+  }
+  .card.active { border-color: #7be2ff; }
+  .card .meta {
+    font-size: 11px;
+    color: #3c7a99;
+    margin-bottom: 4px;
+  }
+  .card .body {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .watch-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a1620;
+    border-left: 2px solid #0b1d2e;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 0 8px 8px 0;
+  }
+  .watch-symbol {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  .watch-price {
+    font-size: 16px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .watch-change {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .up { color: #5aff7a; }
+  .down { color: #ff5a5a; }
+  .bottom {
+    flex-shrink: 0;
+    background: #020a12;
+    border-top: 1px solid #0b1d2e;
+    padding: 10px 12px 14px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+  }
+  .cmd-row {
+    display: flex;
+    gap: 8px;
+  }
+  .cmd-input {
+    flex: 1;
+    background: #0a1620;
+    border: 1px solid #0b1d2e;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #c8e6ff;
+    font-size: 15px;
+    outline: none;
+  }
+  .cmd-input::placeholder { color: #3c5a6e; }
+  .cmd-btn {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    border: 1px solid #0b1d2e;
+    background: #0a1620;
+    color: #7be2ff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  .nav-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: #3c7a99;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  .nav-btn.active {
+    color: #7be2ff;
+    background: #0a1620;
+    box-shadow: 0 0 20px rgba(123, 226, 255, 0.08);
+  }
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .tile {
+    background: #0a1620;
+    border: 1px solid #0b1d2e;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .tile h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #3c7a99;
+    margin-bottom: 6px;
+  }
+  .tile .value {
+    font-size: 20px;
+    color: #7be2ff;
+    font-weight: 700;
+  }
+  .tile .sub {
+    font-size: 11px;
+    color: #6a8a9a;
+    margin-top: 3px;
+  }
+  .scanline {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 180, 255, 0.015) 51%);
+    background-size: 100% 4px;
+    z-index: 50;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+  .pulse { animation: pulse 2.2s infinite; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+<div class="app">
+  <div class="topbar">
+    <div class="brand">Wilson // Jarvis</div>
+    <div class="status"><span class="dot pulse"></span><span id="systemStatus">ACTIVE</span></div>
+  </div>
+
+  <div class="panes">
+    <div class="pane active" id="pane-home">
+      <h2>Status</h2>
+      <div class="tiles">
+        <div class="tile"><h4>Memory</h4><div class="value" id="memValue">--</div><div class="sub" id="memSub">--</div></div>
+        <div class="tile"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">pending</div></div>
+        <div class="tile"><h4>Skills</h4><div class="value" id="skillsValue">--</div><div class="sub">installed</div></div>
+        <div class="tile"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">humanity-guide</div></div>
+      </div>
+      <h2>Watchlist</h2>
+      <div id="watchlist"></div>
+    </div>
+
+    <div class="pane" id="pane-memory">
+      <h2>Memory</h2>
+      <div id="memoryList"></div>
+    </div>
+
+    <div class="pane" id="pane-command">
+      <h2>Command</h2>
+      <div id="chatFeed"></div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="cmd-row">
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Command..." autocomplete="off">
+      <button class="cmd-btn" id="sendBtn" aria-label="Send">➤</button>
+    </div>
+    <div class="nav">
+      <button class="nav-btn active" data-pane="pane-home">Home</button>
+      <button class="nav-btn" data-pane="pane-memory">Memory</button>
+      <button class="nav-btn" data-pane="pane-command">Log</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function loadJSON(path) {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(path + ' ' + res.status);
+    return res.json();
+  }
+
+  function esc(str) {
+    return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+
+  function renderMemory(items) {
+    document.getElementById('memoryList').innerHTML = items.map(item => `<div class="card${item.active ? ' active' : ''}"><div class="body">${esc(item.text)}</div></div>`).join('');
+  }
+
+  function renderChat(lines) {
+    document.getElementById('chatFeed').innerHTML = lines.map(line => `<div class="card"><div class="meta">${esc(line.time)}</div><div class="body">${esc(line.text)}</div></div>`).join('');
+  }
+
+  function renderWatchlist(items) {
+    document.getElementById('watchlist').innerHTML = items.map(item => {
+      const cls = item.change >= 0 ? 'up' : 'down';
+      const sign = item.change >= 0 ? '+' : '';
+      return `<div class="watch-item"><div><div class="watch-symbol">${esc(item.symbol)}</div><div class="watch-change ${cls}">${sign}${item.change.toFixed(2)}%</div></div><div class="watch-price ${cls}">${item.price.toFixed(2)}</div></div>`;
+    }).join('');
+  }
+
+  async function refresh() {
+    try {
+      const [memory, status] = await Promise.all([
+        loadJSON('data/memory.json'),
+        loadJSON('data/status.json')
+      ]);
+      renderMemory(memory);
+      document.getElementById('memValue').textContent = status.memory.toLocaleString();
+      document.getElementById('memSub').textContent = `${status.memory.toLocaleString()} / ${status.memoryMax.toLocaleString()}`;
+      document.getElementById('queueValue').textContent = status.queue ?? '--';
+      document.getElementById('skillsValue').textContent = status.skills ?? '--';
+      document.getElementById('modeValue').textContent = status.mode || '--';
+      document.getElementById('systemStatus').textContent = status.status || 'ACTIVE';
+    } catch (e) {
+      console.error('refresh', e);
+    }
+  }
+
+  function switchPane(id) {
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.pane === id));
+  }
+
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchPane(btn.dataset.pane));
+  });
+
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const input = document.getElementById('cmdInput');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    // Placeholder: route command to backend in next phase
+    const feed = document.getElementById('chatFeed');
+    const line = document.createElement('div');
+    line.className = 'card';
+    line.innerHTML = `<div class="meta">now</div><div class="body">${esc(text)}</div>`;
+    feed.prepend(line);
+    switchPane('pane-command');
+  });
+
+  document.getElementById('cmdInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('sendBtn').click();
+  });
+
+  refresh();
+  setInterval(refresh, 5000);
+</script>
+</body>
+</html>
