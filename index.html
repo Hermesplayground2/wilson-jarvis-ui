@@ -104,19 +104,19 @@
   .pane {
     position: absolute; inset: 0;
     overflow-y: auto;
-    padding: 14px;
+    padding: 12px;
     opacity: 0;
     pointer-events: none;
     transform: translateX(14px);
     transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 20px;
+    padding-bottom: 14px;
   }
   .pane.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
   .pane.leaving { transform: translateX(-14px); }
   .pane h2 {
     font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px;
-    color: var(--dim); margin-bottom: 12px;
+    color: var(--dim); margin-bottom: 9px;
   }
 
   /* --------------------------------------------------------- entrance anim */
@@ -158,7 +158,7 @@
     display: flex; justify-content: space-between; align-items: center;
     background: var(--panel);
     border-left: 2px solid var(--line);
-    padding: 12px; margin-bottom: 8px;
+    padding: 10px 12px; margin-bottom: 6px;
     border-radius: 0 8px 8px 0;
     transition: background 0.5s ease, border-color 0.5s ease;
   }
@@ -230,15 +230,20 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* ----------------------------------------------------------------- tiles */
-  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; margin-bottom: 10px; }
   .tile {
     background: var(--panel); border: 1px solid var(--line);
-    border-radius: 10px; padding: 12px;
+    border-radius: 10px; padding: 10px;
     position: relative; overflow: hidden;
   }
-  .tile h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 6px; }
-  .tile .value { font-size: 20px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
-  .tile .sub { font-size: 11px; color: var(--mid); margin-top: 3px; }
+  .tile h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 5px; }
+  .tile .value {
+    font-size: 19px; color: var(--accent); font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+  .tile .sub { font-size: 11px; color: var(--mid); margin-top: 3px; overflow-wrap: anywhere; }
   .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 8px; overflow: hidden; }
   .bar > i {
     display: block; height: 100%; width: 0%;
@@ -247,6 +252,18 @@
     transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
   }
   .bar > i.hot { background: linear-gradient(90deg, #ffb84d, var(--down)); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(104px + var(--safe-bottom));
+    transform: translateX(-50%) translateY(10px);
+    background: #0c1c29; border: 1px solid var(--line);
+    color: #c8e6ff; font-size: 12.5px; line-height: 1.5;
+    padding: 12px 16px; border-radius: 10px; max-width: 86vw;
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.65);
+    opacity: 0; pointer-events: none; z-index: 60;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   .scanline {
     position: fixed; inset: 0; pointer-events: none;
@@ -266,6 +283,7 @@
 </head>
 <body>
 <div class="scanline"></div>
+<div class="toast" id="toast"></div>
 <div class="app">
   <div class="topbar">
     <div class="brand">Wilson // Jarvis</div>
@@ -285,7 +303,7 @@
         </div>
         <div class="tile rise" style="--i:1"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">scheduled</div></div>
         <div class="tile rise" style="--i:2"><h4>Skills</h4><div class="value" id="skillsValue">--</div><div class="sub">installed</div></div>
-        <div class="tile rise" style="--i:3"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">model</div></div>
+        <div class="tile rise" style="--i:3"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:15px;">--</div><div class="sub" id="modeSub">model</div></div>
       </div>
       <h2>Watchlist</h2>
       <div id="watchlist"><div class="skel"></div><div class="skel"></div></div>
@@ -434,7 +452,13 @@
 
       animateNumber($('queueValue'), status.queue ?? 0);
       animateNumber($('skillsValue'), status.skills ?? 0);
-      $('modeValue').textContent = status.mode || '--';
+
+      // 'poolside/laguna-s-2.1:free' wraps and overflows a half-width tile, so the
+      // value shows the model alone and the vendor moves into the sub line.
+      const model = String(status.mode || '');
+      $('modeValue').textContent = model.split('/').pop().replace(/:free$/, '') || '--';
+      $('modeSub').textContent = model.includes('/') ? model.split('/')[0] : 'model';
+
       $('systemStatus').textContent = status.status || 'ACTIVE';
 
       lastOk = Date.now();
@@ -495,21 +519,44 @@
   });
 
   // ---------------------------------------------------------- PWA plumbing
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                    || window.navigator.standalone === true;
+
+  function toast(html, ms) {
+    const el = $('toast');
+    el.innerHTML = html;
+    el.classList.add('show');
+    clearTimeout(el._timer);
+    el._timer = setTimeout(() => el.classList.remove('show'), ms || 7000);
+  }
+
   let installEvent = null;
+  const installBtn = $('installBtn');
+
+  // Brave often never fires beforeinstallprompt, so the button cannot depend on
+  // that event: show it whenever the app is not already installed and fall back to
+  // telling the user the manual route.
+  if (!isStandalone) installBtn.classList.add('show');
+
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     installEvent = e;
-    $('installBtn').classList.add('show');
+    installBtn.classList.add('show');
   });
-  $('installBtn').addEventListener('click', async () => {
-    if (!installEvent) return;
-    installEvent.prompt();
-    await installEvent.userChoice;
-    installEvent = null;
-    $('installBtn').classList.remove('show');
+
+  installBtn.addEventListener('click', async () => {
+    if (installEvent) {
+      installEvent.prompt();
+      await installEvent.userChoice;
+      installEvent = null;
+      installBtn.classList.remove('show');
+      return;
+    }
+    toast('Open the browser menu (⋮) and pick <b>Add to Home screen</b> / <b>Install app</b>.', 8000);
   });
+
   window.addEventListener('appinstalled', () => {
-    $('installBtn').classList.remove('show');
+    installBtn.classList.remove('show');
     $('ago').textContent = 'installed';
   });
 

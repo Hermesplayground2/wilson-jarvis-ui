@@ -9,7 +9,7 @@
  *
  * Bump CACHE whenever a shell file changes, or phones keep the old build.
  */
-const CACHE = 'wilson-jarvis-v3';
+const CACHE = 'wilson-jarvis-v4';
 
 const SHELL = [
   './',
