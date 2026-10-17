@@ -2,223 +2,266 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Wilson">
 <meta name="theme-color" content="#020408">
+<meta name="description" content="Live status HUD for Viktor's Hermes agent.">
 <title>Wilson // Jarvis</title>
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
 <style>
+  :root {
+    --bg: #020408;
+    --panel: #0a1620;
+    --line: #0b1d2e;
+    --accent: #7be2ff;
+    --dim: #3c7a99;
+    --mid: #6a8a9a;
+    --up: #5aff7a;
+    --down: #ff5a5a;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body {
     height: 100%;
-    background: #020408;
+    background: var(--bg);
     color: #c8e6ff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     overflow: hidden;
+    overscroll-behavior: none;
   }
-  .app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    height: 100dvh;
-  }
+  .app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+
+  /* ---------------------------------------------------------------- topbar */
   .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     padding: 14px 18px;
+    padding-top: calc(14px + var(--safe-top));
     background: #020a12;
-    border-bottom: 1px solid #0b1d2e;
+    border-bottom: 1px solid var(--line);
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  /* a light sweeping across the bar: reads as "live" without being noisy */
+  .topbar::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(123, 226, 255, 0.07), transparent);
+    animation: sweep 6s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes sweep {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(320%); }
   }
   .brand {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7be2ff;
+    font-size: 16px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent);
     text-shadow: 0 0 18px rgba(123, 226, 255, 0.35);
+    white-space: nowrap;
   }
-  .status {
-    font-size: 11px;
-    color: #6a8a9a;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+  .top-right { display: flex; align-items: center; gap: 10px; }
+  .status { font-size: 11px; color: var(--mid); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
   .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: #5aff7a;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--up);
     box-shadow: 0 0 10px rgba(90, 255, 122, 0.6);
+    animation: glow 2.2s ease-in-out infinite;
   }
-  .panes {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
+  @keyframes glow {
+    0%, 100% { opacity: 0.55; box-shadow: 0 0 6px rgba(90, 255, 122, 0.4); transform: scale(0.9); }
+    50% { opacity: 1; box-shadow: 0 0 16px rgba(90, 255, 122, 0.9); transform: scale(1.15); }
   }
+  .dot.stale { background: #ffb84d; box-shadow: 0 0 12px rgba(255, 184, 77, 0.8); }
+  .install {
+    display: none;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--accent);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 7px 10px; border-radius: 8px;
+  }
+  .install.show { display: inline-block; animation: popIn 0.35s ease; }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ----------------------------------------------------------------- panes */
+  .panes { flex: 1; overflow: hidden; position: relative; }
   .pane {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     overflow-y: auto;
     padding: 14px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.18s ease;
+    transform: translateX(14px);
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
   }
-  .pane.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  .pane.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
+  .pane.leaving { transform: translateX(-14px); }
   .pane h2 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: #3c7a99;
-    margin-bottom: 12px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px;
+    color: var(--dim); margin-bottom: 12px;
   }
+
+  /* --------------------------------------------------------- entrance anim */
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .rise {
+    animation: riseIn 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 45ms);
+  }
+
+  /* ----------------------------------------------------------------- cards */
   .card {
-    background: #0a1620;
-    border-left: 2px solid #0b1d2e;
-    padding: 12px;
-    margin-bottom: 8px;
+    background: var(--panel);
+    border-left: 2px solid var(--line);
+    padding: 12px; margin-bottom: 8px;
     border-radius: 0 8px 8px 0;
+    transition: border-color 0.25s ease, background 0.25s ease;
   }
-  .card.active { border-color: #7be2ff; }
-  .card .meta {
-    font-size: 11px;
-    color: #3c7a99;
-    margin-bottom: 4px;
+  .card.active { border-color: var(--accent); background: #0c1c29; }
+  .card .meta { font-size: 11px; color: var(--dim); margin-bottom: 4px; }
+  .card .body { font-size: 14px; line-height: 1.45; }
+
+  /* -------------------------------------------------------------- skeleton */
+  .skel {
+    height: 46px; margin-bottom: 8px; border-radius: 0 8px 8px 0;
+    background: linear-gradient(90deg, #0a1620 25%, #10222f 50%, #0a1620 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.3s linear infinite;
   }
-  .card .body {
-    font-size: 14px;
-    line-height: 1.45;
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
   }
+
+  /* ------------------------------------------------------------- watchlist */
   .watch-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0a1620;
-    border-left: 2px solid #0b1d2e;
-    padding: 12px;
-    margin-bottom: 8px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--panel);
+    border-left: 2px solid var(--line);
+    padding: 12px; margin-bottom: 8px;
     border-radius: 0 8px 8px 0;
+    transition: background 0.5s ease, border-color 0.5s ease;
   }
-  .watch-symbol {
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+  .watch-item.flash-up { animation: flashUp 1.1s ease; }
+  .watch-item.flash-down { animation: flashDown 1.1s ease; }
+  @keyframes flashUp {
+    0% { background: rgba(90, 255, 122, 0.22); border-color: var(--up); }
+    100% { background: var(--panel); border-color: var(--line); }
   }
-  .watch-price {
-    font-size: 16px;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
+  @keyframes flashDown {
+    0% { background: rgba(255, 90, 90, 0.22); border-color: var(--down); }
+    100% { background: var(--panel); border-color: var(--line); }
   }
-  .watch-change {
-    font-size: 12px;
-    margin-top: 2px;
-  }
-  .up { color: #5aff7a; }
-  .down { color: #ff5a5a; }
+  .watch-symbol { font-weight: 600; font-size: 14px; letter-spacing: 0.5px; }
+  .watch-price { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .watch-change { font-size: 12px; margin-top: 2px; }
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+
+  /* ---------------------------------------------------------------- bottom */
   .bottom {
     flex-shrink: 0;
     background: #020a12;
-    border-top: 1px solid #0b1d2e;
+    border-top: 1px solid var(--line);
     padding: 10px 12px 14px;
-    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    padding-bottom: calc(14px + var(--safe-bottom));
   }
-  .cmd-row {
-    display: flex;
-    gap: 8px;
-  }
+  .cmd-row { display: flex; gap: 8px; }
   .cmd-input {
-    flex: 1;
-    background: #0a1620;
-    border: 1px solid #0b1d2e;
-    border-radius: 10px;
-    padding: 12px 14px;
-    color: #c8e6ff;
-    font-size: 15px;
-    outline: none;
+    flex: 1; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 14px; color: #c8e6ff; font-size: 15px;
+    outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
+  .cmd-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(123, 226, 255, 0.12); }
   .cmd-input::placeholder { color: #3c5a6e; }
   .cmd-btn {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    border: 1px solid #0b1d2e;
-    background: #0a1620;
-    color: #7be2ff;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 44px; height: 44px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--panel); color: var(--accent);
+    font-size: 18px; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.12s ease, background 0.2s ease;
   }
-  .nav {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
+  .cmd-btn:active { transform: scale(0.9); background: #0c1c29; }
+  .nav { display: flex; justify-content: space-around; margin-top: 10px; }
   .nav-btn {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    background: transparent;
-    color: #3c7a99;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-    border-radius: 8px;
+    flex: 1; padding: 10px; border: none; background: transparent;
+    color: var(--dim); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 600; border-radius: 8px;
+    position: relative; overflow: hidden;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.12s ease;
   }
-  .nav-btn.active {
-    color: #7be2ff;
-    background: #0a1620;
-    box-shadow: 0 0 20px rgba(123, 226, 255, 0.08);
+  .nav-btn:active { transform: scale(0.94); }
+  .nav-btn.active { color: var(--accent); background: var(--panel); box-shadow: 0 0 20px rgba(123, 226, 255, 0.08); }
+  .ripple {
+    position: absolute; border-radius: 50%; transform: scale(0);
+    background: rgba(123, 226, 255, 0.35); pointer-events: none;
+    animation: ripple 0.5s ease-out forwards;
   }
-  .tiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    margin-bottom: 12px;
+  @keyframes ripple {
+    to { transform: scale(3.2); opacity: 0; }
   }
+  .ago {
+    text-align: center; font-size: 10px; color: #2f5a72;
+    margin-top: 8px; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .ago.spin::before {
+    content: '⟳ '; display: inline-block;
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ----------------------------------------------------------------- tiles */
+  .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
   .tile {
-    background: #0a1620;
-    border: 1px solid #0b1d2e;
-    border-radius: 10px;
-    padding: 12px;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px;
+    position: relative; overflow: hidden;
   }
-  .tile h4 {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #3c7a99;
-    margin-bottom: 6px;
+  .tile h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 6px; }
+  .tile .value { font-size: 20px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tile .sub { font-size: 11px; color: var(--mid); margin-top: 3px; }
+  .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+  .bar > i {
+    display: block; height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--accent), #3aa8d8);
+    border-radius: 2px;
+    transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
   }
-  .tile .value {
-    font-size: 20px;
-    color: #7be2ff;
-    font-weight: 700;
-  }
-  .tile .sub {
-    font-size: 11px;
-    color: #6a8a9a;
-    margin-top: 3px;
-  }
+  .bar > i.hot { background: linear-gradient(90deg, #ffb84d, var(--down)); }
+
   .scanline {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none;
+    position: fixed; inset: 0; pointer-events: none;
     background: linear-gradient(to bottom, transparent 50%, rgba(0, 180, 255, 0.015) 51%);
-    background-size: 100% 4px;
-    z-index: 50;
+    background-size: 100% 4px; z-index: 50;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.55; }
-    50% { opacity: 1; }
-  }
-  .pulse { animation: pulse 2.2s infinite; }
   .hidden { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -226,36 +269,42 @@
 <div class="app">
   <div class="topbar">
     <div class="brand">Wilson // Jarvis</div>
-    <div class="status"><span class="dot pulse"></span><span id="systemStatus">ACTIVE</span></div>
+    <div class="top-right">
+      <button class="install" id="installBtn">Install</button>
+      <div class="status"><span class="dot" id="statusDot"></span><span id="systemStatus">ACTIVE</span></div>
+    </div>
   </div>
 
   <div class="panes">
     <div class="pane active" id="pane-home">
       <h2>Status</h2>
       <div class="tiles">
-        <div class="tile"><h4>Memory</h4><div class="value" id="memValue">--</div><div class="sub" id="memSub">--</div></div>
-        <div class="tile"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">scheduled</div></div>
-        <div class="tile"><h4>Skills</h4><div class="value" id="skillsValue">--</div><div class="sub">installed</div></div>
-        <div class="tile"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">model</div></div>
+        <div class="tile rise" style="--i:0">
+          <h4>Memory</h4><div class="value" id="memValue">--</div><div class="sub" id="memSub">--</div>
+          <div class="bar"><i id="memBar"></i></div>
+        </div>
+        <div class="tile rise" style="--i:1"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">scheduled</div></div>
+        <div class="tile rise" style="--i:2"><h4>Skills</h4><div class="value" id="skillsValue">--</div><div class="sub">installed</div></div>
+        <div class="tile rise" style="--i:3"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">model</div></div>
       </div>
       <h2>Watchlist</h2>
-      <div id="watchlist"></div>
+      <div id="watchlist"><div class="skel"></div><div class="skel"></div></div>
     </div>
 
     <div class="pane" id="pane-memory">
       <h2>Memory</h2>
-      <div id="memoryList"></div>
+      <div id="memoryList"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
     </div>
 
     <div class="pane" id="pane-command">
       <h2>Command</h2>
-      <div id="chatFeed"></div>
+      <div id="chatFeed"><div class="skel"></div><div class="skel"></div></div>
     </div>
   </div>
 
   <div class="bottom">
     <div class="cmd-row">
-      <input type="text" class="cmd-input" id="cmdInput" placeholder="Command..." autocomplete="off">
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Command..." autocomplete="off" enterkeyhint="send">
       <button class="cmd-btn" id="sendBtn" aria-label="Send">➤</button>
     </div>
     <div class="nav">
@@ -263,12 +312,19 @@
       <button class="nav-btn" data-pane="pane-memory">Memory</button>
       <button class="nav-btn" data-pane="pane-command">Log</button>
     </div>
+    <div class="ago" id="ago">connecting…</div>
   </div>
 </div>
 
 <script>
+  const $ = (id) => document.getElementById(id);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Phone integration: short haptic taps on navigation, when the device has one.
+  const buzz = (ms) => { if (navigator.vibrate && !reduceMotion) { try { navigator.vibrate(ms); } catch (e) {} } };
+
   async function loadJSON(path) {
-    const res = await fetch(path);
+    const res = await fetch(path, { cache: 'no-store' });
     if (!res.ok) throw new Error(path + ' ' + res.status);
     return res.json();
   }
@@ -277,23 +333,86 @@
     return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   }
 
+  // Count the tiles up instead of snapping, so a refresh is visible.
+  function animateNumber(el, to) {
+    const from = Number(String(el.textContent).replace(/[^0-9.-]/g, '')) || 0;
+    const target = to.toLocaleString();
+    if (reduceMotion || from === to) { el.textContent = target; return; }
+    const start = performance.now(), dur = 700;
+    let finished = false;
+    function step(now) {
+      if (finished) return;
+      const t = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(from + (to - from) * eased).toLocaleString();
+      if (t < 1) requestAnimationFrame(step);
+      else finished = true;
+    }
+    requestAnimationFrame(step);
+    // Safety net: a backgrounded tab or a headless browser never fires
+    // requestAnimationFrame, and a tile stuck on "--" is worse than no animation.
+    setTimeout(() => {
+      if (!finished) { finished = true; el.textContent = target; }
+    }, dur + 250);
+  }
+
   function renderMemory(items) {
-    document.getElementById('memoryList').innerHTML = items.map(item => `<div class="card${item.active ? ' active' : ''}"><div class="body">${esc(item.text)}</div></div>`).join('');
+    $('memoryList').innerHTML = items.map((item, i) =>
+      `<div class="card rise${item.active ? ' active' : ''}" style="--i:${i}"><div class="body">${esc(item.text)}</div></div>`
+    ).join('');
   }
 
   function renderChat(lines) {
-    document.getElementById('chatFeed').innerHTML = lines.map(line => `<div class="card"><div class="meta">${esc(line.time)}</div><div class="body">${esc(line.text)}</div></div>`).join('');
+    $('chatFeed').innerHTML = lines.map((line, i) =>
+      `<div class="card rise" style="--i:${i}"><div class="meta">${esc(line.time)}</div><div class="body">${esc(line.text)}</div></div>`
+    ).join('');
   }
 
+  // Remember the last price per symbol so a change can flash.
+  const lastPrice = {};
+
   function renderWatchlist(items) {
-    document.getElementById('watchlist').innerHTML = items.map(item => {
+    $('watchlist').innerHTML = items.map((item, i) => {
       const cls = item.change >= 0 ? 'up' : 'down';
       const sign = item.change >= 0 ? '+' : '';
-      return `<div class="watch-item"><div><div class="watch-symbol">${esc(item.symbol)}</div><div class="watch-change ${cls}">${sign}${item.change.toFixed(2)}%</div></div><div class="watch-price ${cls}">${item.price.toFixed(2)}</div></div>`;
+      return `<div class="watch-item rise" data-sym="${esc(item.symbol)}" style="--i:${i}">
+        <div><div class="watch-symbol">${esc(item.symbol)}</div>
+        <div class="watch-change ${cls}">${sign}${item.change.toFixed(2)}%</div></div>
+        <div class="watch-price ${cls}">${item.price.toFixed(2)}</div></div>`;
     }).join('');
+
+    items.forEach((item) => {
+      const prev = lastPrice[item.symbol];
+      if (prev !== undefined && prev !== item.price && !reduceMotion) {
+        const node = document.querySelector(`.watch-item[data-sym="${item.symbol}"]`);
+        if (node) {
+          const dir = item.price > prev ? 'flash-up' : 'flash-down';
+          requestAnimationFrame(() => node.classList.add(dir));
+          setTimeout(() => node.classList.remove(dir), 1200);
+          buzz(12);
+        }
+      }
+      lastPrice[item.symbol] = item.price;
+    });
+  }
+
+  let lastOk = 0;
+
+  function markAgo(ok) {
+    const el = $('ago');
+    const dot = $('statusDot');
+    if (!ok) {
+      el.textContent = 'offline — showing last known data';
+      dot.classList.add('stale');
+      return;
+    }
+    dot.classList.remove('stale');
+    const secs = Math.round((Date.now() - lastOk) / 1000);
+    el.textContent = secs < 5 ? 'updated just now' : `updated ${secs}s ago`;
   }
 
   async function refresh() {
+    $('ago').classList.add('spin');
     try {
       const [memory, status, watchlist, commands] = await Promise.all([
         loadJSON('data/memory.json'),
@@ -304,59 +423,112 @@
       renderMemory(memory);
       renderWatchlist(watchlist);
       renderChat(commands);
-      document.getElementById('memValue').textContent = status.memory.toLocaleString();
-      document.getElementById('memSub').textContent = `${status.memory.toLocaleString()} / ${status.memoryMax.toLocaleString()}`;
-      document.getElementById('queueValue').textContent = status.queue ?? '--';
-      document.getElementById('skillsValue').textContent = status.skills ?? '--';
-      document.getElementById('modeValue').textContent = status.mode || '--';
-      document.getElementById('systemStatus').textContent = status.status || 'ACTIVE';
+
+      animateNumber($('memValue'), status.memory);
+      $('memSub').textContent = `${status.memory.toLocaleString()} / ${status.memoryMax.toLocaleString()}`;
+
+      const pct = status.memoryMax ? Math.min(100, (status.memory / status.memoryMax) * 100) : 0;
+      const bar = $('memBar');
+      bar.style.width = pct + '%';
+      bar.classList.toggle('hot', pct >= 80);
+
+      animateNumber($('queueValue'), status.queue ?? 0);
+      animateNumber($('skillsValue'), status.skills ?? 0);
+      $('modeValue').textContent = status.mode || '--';
+      $('systemStatus').textContent = status.status || 'ACTIVE';
+
+      lastOk = Date.now();
+      markAgo(true);
     } catch (e) {
       console.error('refresh', e);
+      markAgo(false);
+    } finally {
+      $('ago').classList.remove('spin');
     }
   }
 
-  function switchPane(id) {
-    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+  function switchPane(id, silent) {
+    if (!$(id)) return;
+    document.querySelectorAll('.pane').forEach(p => {
+      p.classList.toggle('active', p.id === id);
+      p.classList.toggle('leaving', false);
+    });
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.pane === id));
+    if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+    if (!silent) buzz(8);
   }
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchPane(btn.dataset.pane));
+    btn.addEventListener('click', (ev) => {
+      const r = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(r.width, r.height);
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (ev.clientX - r.left - size / 2) + 'px';
+      ripple.style.top = (ev.clientY - r.top - size / 2) + 'px';
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 520);
+      switchPane(btn.dataset.pane);
+    });
   });
 
-  // The Railway command API (wilson-jarvis-api.up.railway.app) was decommissioned
-  // and now answers 404, so nothing here talks to a remote endpoint any more: all
-  // three panes read the static data/*.json files that scripts/jarvis_ui_refresh.py
-  // regenerates.
-
   document.getElementById('sendBtn').addEventListener('click', () => {
-    const input = document.getElementById('cmdInput');
+    const input = $('cmdInput');
     const text = input.value.trim();
     if (!text) return;
     input.value = '';
+    buzz(15);
 
-    const feed = document.getElementById('chatFeed');
+    const feed = $('chatFeed');
     const line = document.createElement('div');
-    line.className = 'card';
+    line.className = 'card rise';
     line.innerHTML = `<div class="meta">local echo</div><div class="body">${esc(text)}</div>`;
     feed.prepend(line);
-    switchPane('pane-command');
+    switchPane('pane-command', true);
     // Not delivered: there is no backend attached. Re-point this at a live
     // endpoint to make the command pane real.
   });
 
-  document.getElementById('cmdInput').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') document.getElementById('sendBtn').click();
+  $('cmdInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') $('sendBtn').click();
   });
 
+  // ---------------------------------------------------------- PWA plumbing
+  let installEvent = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    installEvent = e;
+    $('installBtn').classList.add('show');
+  });
+  $('installBtn').addEventListener('click', async () => {
+    if (!installEvent) return;
+    installEvent.prompt();
+    await installEvent.userChoice;
+    installEvent = null;
+    $('installBtn').classList.remove('show');
+  });
+  window.addEventListener('appinstalled', () => {
+    $('installBtn').classList.remove('show');
+    $('ago').textContent = 'installed';
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
+    });
+  }
+
+  // Coming back to the app should show current numbers, not whatever was on
+  // screen when it was backgrounded.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refresh();
+  });
+
+  switchPane(location.hash ? location.hash.slice(1) : 'pane-home', true);
   refresh();
   setInterval(refresh, 5000);
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(console.error);
-  }
+  setInterval(() => markAgo(true), 1000);
 </script>
 </body>
 </html>
