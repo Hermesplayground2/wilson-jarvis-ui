@@ -28,7 +28,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(os.environ.get("JARVIS_UI_REPO", "D:/Hermes/projects/website/jarvis-ui"))
 DATA = REPO / "data"
 NOTES = Path("D:/Hermes/memory/persistent-notes")
 
@@ -191,9 +191,15 @@ def watchlist() -> list:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--push", action="store_true",
-                    help="git add/commit/push the refreshed data so Pages updates")
+    ap.add_argument("--no-push", action="store_true",
+                    help="only rewrite the data files, do not commit or push")
+    ap.add_argument("--repo", help="override the jarvis-ui checkout to refresh")
     args = ap.parse_args()
+
+    global REPO, DATA
+    if args.repo:
+        REPO = Path(args.repo)
+        DATA = REPO / "data"
 
     DATA.mkdir(parents=True, exist_ok=True)
 
@@ -203,7 +209,9 @@ def main() -> int:
     mem = gateway_memory_mb()
 
     status = {
-        "memory": mem if mem is not None else 0,
+        # Rounded to 25 MB: the exact figure wobbles every few seconds and would
+        # otherwise commit and push on every single run.
+        "memory": (round(mem / 25) * 25) if mem is not None else 0,
         "memoryMax": 2800,               # gateway.memory_restart_threshold_mb
         "skills": skill_count(),
         "status": "ONLINE",
@@ -231,7 +239,7 @@ def main() -> int:
     print("watchlist: %s" % ", ".join("%s %.2f" % (r["symbol"], r["price"]) for r in wl))
     print("cron:    %d enabled / %d total" % (len(enabled), len(jobs)))
 
-    if args.push:
+    if not args.no_push:
         def git(*cmd):
             return subprocess.run(["git", "-C", str(REPO), *cmd],
                                   capture_output=True, text=True)
