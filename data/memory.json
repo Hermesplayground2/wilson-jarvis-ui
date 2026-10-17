@@ -1,10 +1,42 @@
 [
-  {"text":"Principle: selflessness over self-preservation","active":true},
-  {"text":"Model: Rocky Balboa — perseverance builds strength","active":false},
-  {"text":"Stock watch: SLV, PAAS.TO, SPCX, RUM","active":false},
-  {"text":"Bible app: Activities fix deployed","active":false},
-  {"text":"YouTube pipeline: hybrid analysis operational","active":false},
-  {"text":"Cloud backup: GitHub private repo ready","active":false},
-  {"text":"Tailscale: deferred","active":false},
-  {"text":"Last brief: 2026-09-06","active":false}
+  {
+    "text": "Topics tracked: 9",
+    "active": true
+  },
+  {
+    "text": "Topic: bible project",
+    "active": false
+  },
+  {
+    "text": "Topic: bob bot",
+    "active": false
+  },
+  {
+    "text": "Topic: infrastructure",
+    "active": false
+  },
+  {
+    "text": "Topic: models and providers",
+    "active": false
+  },
+  {
+    "text": "Topic: pembina",
+    "active": false
+  },
+  {
+    "text": "Topic: phonedx",
+    "active": false
+  },
+  {
+    "text": "Topic: phonedx broken screen",
+    "active": false
+  },
+  {
+    "text": "Topic: phonedx wireless adb",
+    "active": false
+  },
+  {
+    "text": "Topic: tooling",
+    "active": false
+  }
 ]

@@ -234,9 +234,9 @@
       <h2>Status</h2>
       <div class="tiles">
         <div class="tile"><h4>Memory</h4><div class="value" id="memValue">--</div><div class="sub" id="memSub">--</div></div>
-        <div class="tile"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">pending</div></div>
+        <div class="tile"><h4>Queue</h4><div class="value" id="queueValue">--</div><div class="sub">scheduled</div></div>
         <div class="tile"><h4>Skills</h4><div class="value" id="skillsValue">--</div><div class="sub">installed</div></div>
-        <div class="tile"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">humanity-guide</div></div>
+        <div class="tile"><h4>Mode</h4><div class="value" id="modeValue" style="font-size:14px;">--</div><div class="sub">model</div></div>
       </div>
       <h2>Watchlist</h2>
       <div id="watchlist"></div>
@@ -295,11 +295,15 @@
 
   async function refresh() {
     try {
-      const [memory, status] = await Promise.all([
+      const [memory, status, watchlist, commands] = await Promise.all([
         loadJSON('data/memory.json'),
-        loadJSON('data/status.json')
+        loadJSON('data/status.json'),
+        loadJSON('data/watchlist.json').catch(() => []),
+        loadJSON('data/commands.json').catch(() => [])
       ]);
       renderMemory(memory);
+      renderWatchlist(watchlist);
+      renderChat(commands);
       document.getElementById('memValue').textContent = status.memory.toLocaleString();
       document.getElementById('memSub').textContent = `${status.memory.toLocaleString()} / ${status.memoryMax.toLocaleString()}`;
       document.getElementById('queueValue').textContent = status.queue ?? '--';
@@ -321,18 +325,25 @@
     btn.addEventListener('click', () => switchPane(btn.dataset.pane));
   });
 
+  // The Railway command API (wilson-jarvis-api.up.railway.app) was decommissioned
+  // and now answers 404, so nothing here talks to a remote endpoint any more: all
+  // three panes read the static data/*.json files that scripts/jarvis_ui_refresh.py
+  // regenerates.
+
   document.getElementById('sendBtn').addEventListener('click', () => {
     const input = document.getElementById('cmdInput');
     const text = input.value.trim();
     if (!text) return;
     input.value = '';
-    // Placeholder: route command to backend in next phase
+
     const feed = document.getElementById('chatFeed');
     const line = document.createElement('div');
     line.className = 'card';
-    line.innerHTML = `<div class="meta">now</div><div class="body">${esc(text)}</div>`;
+    line.innerHTML = `<div class="meta">local echo</div><div class="body">${esc(text)}</div>`;
     feed.prepend(line);
     switchPane('pane-command');
+    // Not delivered: there is no backend attached. Re-point this at a live
+    // endpoint to make the command pane real.
   });
 
   document.getElementById('cmdInput').addEventListener('keydown', (e) => {
