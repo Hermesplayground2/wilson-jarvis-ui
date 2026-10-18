@@ -1,31 +1,31 @@
 [
   {
-    "time": "2026-10-17 22:30:15",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-17 22:30:15",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-17 22:22:15",
-    "text": "Bob watchdog supervisor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-17 22:20:15",
-    "text": "bible-comment-notify"
-  },
-  {
-    "time": "2026-10-17 22:00:22",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-10-17 22:00:15",
+    "time": "2026-10-17 23:00:15",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-17 22:00:15",
+    "time": "2026-10-17 23:00:15",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-17 23:00:15",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-17 23:00:15",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-17 22:55:15",
+    "text": "Bob watchdog supervisor \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-17 22:52:30",
+    "text": "bible-comment-notify \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-17 22:33:04",
+    "text": "Jarvis dashboard data refresh \u2014 script failed"
   },
   {
     "time": "2026-10-17 21:17:15",
