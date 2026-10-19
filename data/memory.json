@@ -1,7 +1,11 @@
 [
   {
-    "text": "Topics tracked: 9",
+    "text": "Topics tracked: 14",
     "active": true
+  },
+  {
+    "text": "Topic: bible app",
+    "active": false
   },
   {
     "text": "Topic: bible project",
@@ -24,6 +28,10 @@
     "active": false
   },
   {
+    "text": "Topic: phone recovery",
+    "active": false
+  },
+  {
     "text": "Topic: phonedx",
     "active": false
   },
@@ -36,7 +44,7 @@
     "active": false
   },
   {
-    "text": "Topic: tooling",
+    "text": "Topic: storage policy",
     "active": false
   }
 ]
