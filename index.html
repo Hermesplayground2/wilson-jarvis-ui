@@ -318,6 +318,15 @@
       <h2>Command</h2>
       <div id="chatFeed"><div class="skel"></div><div class="skel"></div></div>
     </div>
+    <div class="pane" id="pane-call">
+      <h2>Voice Call</h2>
+      <div id="callFeed"><div class="card rise"><div class="meta">ready</div><div class="body">Tap ► Start Call and speak. Wilson answers with voice.</div></div></div>
+      <div style="display:flex;gap:10px;justify-content:center;align-items:center;margin-top:24px;">
+        <button class="cmd-btn" id="startCallBtn" style="padding:14px 22px;font-size:16px;" aria-label="Start call">► Start Call</button>
+        <button class="cmd-btn" id="endCallBtn" disabled style="padding:14px 22px;font-size:16px;background:#5a1a1a;color:#ffb3b3;border-color:#713;border-style:solid;" aria-label="End call">⏹ End</button>
+      </div>
+      <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--dim);" id="callStatus">idle</div>
+    </div>
   </div>
 
   <div class="bottom">
@@ -329,6 +338,7 @@
       <button class="nav-btn active" data-pane="pane-home">Home</button>
       <button class="nav-btn" data-pane="pane-memory">Memory</button>
       <button class="nav-btn" data-pane="pane-command">Log</button>
+      <button class="nav-btn" data-pane="pane-call">📞 Voice</button>
     </div>
     <div class="ago" id="ago">connecting…</div>
   </div>
@@ -577,5 +587,7 @@
   setInterval(refresh, 5000);
   setInterval(() => markAgo(true), 1000);
 </script>
+
+  <script src="voice.js"></script>
 </body>
 </html>
