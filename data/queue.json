@@ -1,5 +1,54 @@
 {
-  "pending": 0,
-  "total": 0,
-  "items": []
+  "pending": 20,
+  "total": 37,
+  "items": [
+    {
+      "title": "wilson-memory-compaction",
+      "status": "enabled"
+    },
+    {
+      "title": "daily-bike-forecast",
+      "status": "paused"
+    },
+    {
+      "title": "Daily Pembina Valley Events maintenance",
+      "status": "paused"
+    },
+    {
+      "title": "RUM SPCX news/price monitor",
+      "status": "paused"
+    },
+    {
+      "title": "pembina maintenance check",
+      "status": "paused"
+    },
+    {
+      "title": "stock catalyst brief",
+      "status": "enabled"
+    },
+    {
+      "title": "jarvis-ui price refresh",
+      "status": "paused"
+    },
+    {
+      "title": "RUM Trigger Newsletter",
+      "status": "enabled"
+    },
+    {
+      "title": "RUM Monitor",
+      "status": "enabled"
+    },
+    {
+      "title": "Telegram Gateway Watchdog",
+      "status": "enabled"
+    },
+    {
+      "title": "Rate-limit watchdog",
+      "status": "enabled"
+    },
+    {
+      "title": "Memory Compaction Backup",
+      "status": "enabled"
+    }
+  ]
 }
