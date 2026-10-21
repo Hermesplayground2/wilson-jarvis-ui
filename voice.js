@@ -107,7 +107,7 @@
       if (err.name === 'AbortError') toast('Wilson is taking too long. Try again.');
       else if (err.message === 'api-origin-missing')
         toast('Set voice_api in data/api-config.json to your API origin (e.g. https://wilson-jarvis-api.up.railway.app).');
-      else toast('Voice error: ' + err.message);
+      else toast('Voice error at ' + (apiOrigin ? apiOrigin + '/voice' : '?/voice') + ': ' + err.message, 8000);
     }
     recognizing = true;
     if (cb) cb.disabled = false;
@@ -116,7 +116,8 @@
 
   function startCall() {
     loadConfig().then(() => {
-      if (!apiOrigin) toast('Set voice_api in data/api-config.json to your API origin.');
+      if (!apiOrigin || apiOrigin.includes('YOUR-API') || apiOrigin.includes('localhost'))
+        toast('Set voice_api in data/api-config.json to your live https API (e.g. https://wilson-jarvis-api.up.railway.app). You can edit that file directly.');
       buzz(15);
       history = [];
       const feed = $('callFeed'); if (feed) feed.innerHTML = '';
