@@ -1,31 +1,31 @@
 [
   {
-    "time": "2026-10-21 22:00:37",
+    "time": "2026-10-22 06:45:35",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-21 22:00:36",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-21 22:00:36",
+    "time": "2026-10-22 06:45:35",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-21 22:00:36",
+    "time": "2026-10-22 06:45:34",
     "text": "Signal gatekeeper \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-21 22:00:36",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-21 21:58:36",
+    "time": "2026-10-22 06:35:34",
     "text": "Bob watchdog supervisor \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-21 21:30:47",
-    "text": "Jarvis dashboard data refresh"
+    "time": "2026-10-22 06:30:46",
+    "text": "Jarvis dashboard data refresh \u2014 script failed"
+  },
+  {
+    "time": "2026-10-22 06:00:35",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-22 06:00:34",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-10-21 20:01:33",

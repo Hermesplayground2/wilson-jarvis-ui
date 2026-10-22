@@ -28,12 +28,6 @@
   let history = [];
 
   async function loadConfig() {
-    const qp = new URLSearchParams(location.search).get('api');
-    if (qp) { apiOrigin = qp.replace(/\/+$/, '') || null; return; }
-    try {
-      const ls = localStorage.getItem('wilson_voice_api');
-      if (ls) { apiOrigin = ls.replace(/\/+$/, '') || null; return; }
-    } catch (e) { /* storage disabled */ }
     try {
       const r = await fetch('data/api-config.json', { cache: 'no-store' });
       if (r.ok) {
