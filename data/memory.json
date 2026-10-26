@@ -1,6 +1,6 @@
 [
   {
-    "text": "Topics tracked: 15",
+    "text": "Topics tracked: 16",
     "active": true
   },
   {
@@ -13,6 +13,10 @@
   },
   {
     "text": "Topic: bob bot",
+    "active": false
+  },
+  {
+    "text": "Topic: future projects",
     "active": false
   },
   {
@@ -41,10 +45,6 @@
   },
   {
     "text": "Topic: phonedx wireless adb",
-    "active": false
-  },
-  {
-    "text": "Topic: storage policy",
     "active": false
   }
 ]
