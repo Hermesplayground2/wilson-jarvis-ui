@@ -1,19 +1,27 @@
 [
   {
-    "time": "2026-10-26 09:00:17",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-26 09:00:17",
+    "time": "2026-10-26 09:30:17",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-26 09:00:17",
+    "time": "2026-10-26 09:30:17",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-26 09:00:17",
+    "time": "2026-10-26 09:30:17",
     "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-26 09:08:11",
+    "text": "Daily Jarvis Brief"
+  },
+  {
+    "time": "2026-10-26 09:00:27",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
+    "time": "2026-10-26 09:00:17",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-10-26 09:00:17",
@@ -22,13 +30,5 @@
   {
     "time": "2026-10-26 09:00:17",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-26 08:30:29",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-10-26 08:13:01",
-    "text": "Wilson Self-Improvement Weekly"
   }
 ]
