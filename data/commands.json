@@ -1,7 +1,23 @@
 [
   {
-    "time": "2026-10-25 20:00:09",
+    "time": "2026-10-25 20:30:09",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-25 20:30:09",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-25 20:30:09",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-25 20:00:27",
+    "text": "RUM Trigger Newsletter"
+  },
+  {
+    "time": "2026-10-25 20:00:19",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-10-25 20:00:09",
@@ -9,26 +25,10 @@
   },
   {
     "time": "2026-10-25 20:00:09",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-25 20:00:09",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-25 20:00:09",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-25 19:30:19",
-    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-10-25 18:47:18",
     "text": "RUM Monitor"
-  },
-  {
-    "time": "2026-10-25 16:20:12",
-    "text": "Pembina daily events feeder"
   }
 ]
