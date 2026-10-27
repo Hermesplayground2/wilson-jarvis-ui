@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-10-27 06:00:10",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+    "time": "2026-10-27 06:30:10",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-27 06:00:10",
+    "time": "2026-10-27 06:30:10",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-27 06:30:10",
     "text": "Signal gatekeeper \u2014 silent (empty output)"
   },
   {
+    "time": "2026-10-27 06:08:11",
+    "text": "Pembina daily events feeder"
+  },
+  {
+    "time": "2026-10-27 06:00:26",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
     "time": "2026-10-27 06:00:10",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-10-27 06:00:10",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-27 05:45:10",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-27 05:30:22",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
     "time": "2026-10-26 20:01:12",
     "text": "RUM Trigger Newsletter"
-  },
-  {
-    "time": "2026-10-26 19:30:15",
-    "text": "Daily Wilson recap (FAILED)"
   }
 ]
