@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-10-26 19:30:13",
+    "time": "2026-10-26 20:00:13",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-26 19:30:12",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-26 19:30:12",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-26 19:00:29",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-10-26 19:00:15",
+    "time": "2026-10-26 20:00:13",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-10-26 19:00:14",
+    "time": "2026-10-26 20:00:12",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-26 20:00:12",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-26 20:00:12",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-26 19:30:22",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
+    "time": "2026-10-26 19:30:15",
+    "text": "Daily Wilson recap (FAILED)"
   },
   {
     "time": "2026-10-26 18:45:17",
     "text": "RUM Monitor (FAILED)"
-  },
-  {
-    "time": "2026-10-26 13:00:14",
-    "text": "stock catalyst brief \u2014 silent (empty output)"
   }
 ]
