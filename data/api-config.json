@@ -1,1 +1,7 @@
-{ "voice_api": "http://192.168.50.199:8000", "voice_enabled": true }
+{
+  "voice_api": "http://192.168.50.199:8000",
+  "voice_enabled": true,
+  "voice_tts": "http://192.168.50.199:8007/v1/tts",
+  "voice_tts_key": "",
+  "voice_pro": false
+}
