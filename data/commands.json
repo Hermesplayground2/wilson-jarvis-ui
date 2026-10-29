@@ -1,7 +1,27 @@
 [
   {
-    "time": "2026-10-29 09:00:16",
+    "time": "2026-10-29 09:30:13",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 09:30:13",
     "text": "PhoneDx Bot auto-scan + notify"
+  },
+  {
+    "time": "2026-10-29 09:30:13",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 09:30:13",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 09:12:46",
+    "text": "Daily Jarvis Brief"
+  },
+  {
+    "time": "2026-10-29 09:00:31",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-10-29 09:00:15",
@@ -9,26 +29,6 @@
   },
   {
     "time": "2026-10-29 09:00:15",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 09:00:15",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 09:00:15",
     "text": "Paid-outcome gate \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 09:00:15",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 08:45:15",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 08:30:27",
-    "text": "Jarvis dashboard data refresh"
   }
 ]
