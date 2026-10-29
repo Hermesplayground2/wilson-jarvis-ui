@@ -1,22 +1,22 @@
 [
   {
     "symbol": "SLV",
-    "price": 47.3501,
-    "change": -3.49
+    "price": 47.42,
+    "change": -3.34
   },
   {
     "symbol": "PAAS.TO",
-    "price": 57.28,
-    "change": -2.32
+    "price": 57.5,
+    "change": -1.94
   },
   {
     "symbol": "SPCX",
-    "price": 144.32,
-    "change": -0.63
+    "price": 144.2602,
+    "change": -0.67
   },
   {
     "symbol": "RUM",
-    "price": 5.71,
-    "change": -1.21
+    "price": 5.745,
+    "change": -0.61
   }
 ]
