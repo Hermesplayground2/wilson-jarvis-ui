@@ -1,9 +1,9 @@
 {
-  "memory": 825,
+  "memory": 400,
   "memoryMax": 2800,
   "skills": 233,
   "status": "ONLINE",
-  "mode": "upstage/solar-mini4:free",
+  "mode": "reflection/beam-1.0-501b-a23b:free",
   "queue": 23,
-  "lastUpdate": "2026-10-30T22:00:24Z"
+  "lastUpdate": "2026-10-30T22:30:09Z"
 }
