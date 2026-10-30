@@ -1,19 +1,27 @@
 [
   {
-    "time": "2026-10-29 20:00:12",
+    "time": "2026-10-29 20:30:11",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 20:30:11",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 20:15:12",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-10-29 20:00:47",
+    "text": "RUM Trigger Newsletter"
+  },
+  {
+    "time": "2026-10-29 20:00:24",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-10-29 20:00:11",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 20:00:11",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-29 20:00:11",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-10-29 20:00:11",
@@ -22,13 +30,5 @@
   {
     "time": "2026-10-29 19:30:27",
     "text": "Daily Wilson recap"
-  },
-  {
-    "time": "2026-10-29 19:30:27",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-10-29 18:45:56",
-    "text": "RUM Monitor"
   }
 ]
