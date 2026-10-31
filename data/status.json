@@ -1,9 +1,9 @@
 {
-  "memory": 700,
+  "memory": 725,
   "memoryMax": 2800,
   "skills": 233,
   "status": "ONLINE",
-  "mode": "reflection/beam-1.0-501b-a23b:free",
+  "mode": "stepfun/step-3.7-flash:free",
   "queue": 22,
-  "lastUpdate": "2026-10-31T01:00:25Z"
+  "lastUpdate": "2026-10-31T01:30:24Z"
 }
