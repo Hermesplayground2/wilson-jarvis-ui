@@ -1,9 +1,9 @@
 {
-  "memory": 750,
+  "memory": 800,
   "memoryMax": 2800,
   "skills": 234,
   "status": "ONLINE",
   "mode": "poolside/laguna-s-2.1:free",
   "queue": 22,
-  "lastUpdate": "2026-10-31T17:00:46Z"
+  "lastUpdate": "2026-10-31T17:30:46Z"
 }
