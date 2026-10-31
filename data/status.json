@@ -1,9 +1,9 @@
 {
-  "memory": 525,
+  "memory": 675,
   "memoryMax": 2800,
   "skills": 233,
   "status": "ONLINE",
-  "mode": "stepfun/step-3.7-flash:free",
+  "mode": "poolside/laguna-s-2.1:free",
   "queue": 22,
-  "lastUpdate": "2026-10-31T02:30:40Z"
+  "lastUpdate": "2026-10-31T03:00:03Z"
 }
