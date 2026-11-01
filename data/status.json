@@ -1,9 +1,9 @@
 {
-  "memory": 850,
+  "memory": 875,
   "memoryMax": 2800,
   "skills": 235,
   "status": "ONLINE",
-  "mode": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "mode": "openai/gpt-oss-120b",
   "queue": 22,
-  "lastUpdate": "2026-11-01T20:30:27Z"
+  "lastUpdate": "2026-11-01T21:00:28Z"
 }
