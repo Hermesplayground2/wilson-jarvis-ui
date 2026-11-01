@@ -1,9 +1,9 @@
 {
-  "memory": 775,
+  "memory": 800,
   "memoryMax": 2800,
   "skills": 235,
   "status": "ONLINE",
   "mode": "openai/gpt-oss-120b",
   "queue": 22,
-  "lastUpdate": "2026-11-01T23:00:02Z"
+  "lastUpdate": "2026-11-01T23:30:02Z"
 }
