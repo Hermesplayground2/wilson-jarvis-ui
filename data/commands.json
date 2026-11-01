@@ -1,23 +1,27 @@
 [
   {
-    "time": "2026-11-01 13:30:28",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 13:30:28",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 13:00:41",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-11-01 13:00:28",
+    "time": "2026-11-01 14:00:27",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-01 13:00:27",
+    "time": "2026-11-01 14:00:27",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 14:00:27",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 13:45:29",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 13:45:28",
+    "text": "RUM Monitor \u2014 BLOCKED (configuration)"
+  },
+  {
+    "time": "2026-11-01 13:30:50",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-01 12:00:13",
@@ -26,9 +30,5 @@
   {
     "time": "2026-11-01 12:00:12",
     "text": "RUM Trigger Newsletter \u2014 BLOCKED (configuration)"
-  },
-  {
-    "time": "2026-11-01 10:00:14",
-    "text": "Weekly Alpha Strategy Audit \u2014 script failed"
   }
 ]
