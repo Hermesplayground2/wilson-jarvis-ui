@@ -1,9 +1,9 @@
 {
-  "memory": 800,
+  "memory": 850,
   "memoryMax": 2800,
   "skills": 235,
   "status": "ONLINE",
-  "mode": "qwen/qwen3.7-flash",
+  "mode": "nvidia/nemotron-3-ultra-550b-a55b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-01T20:00:28Z"
+  "lastUpdate": "2026-11-01T20:30:27Z"
 }
