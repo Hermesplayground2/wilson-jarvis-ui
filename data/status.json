@@ -3,7 +3,7 @@
   "memoryMax": 2800,
   "skills": 235,
   "status": "ONLINE",
-  "mode": "google/gemini-2.0-flash-exp:free",
+  "mode": "ornith/ornith-1.5-122b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-01T15:00:15Z"
+  "lastUpdate": "2026-11-01T15:30:12Z"
 }
