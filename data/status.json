@@ -1,9 +1,9 @@
 {
-  "memory": 925,
+  "memory": 700,
   "memoryMax": 2800,
   "skills": 235,
   "status": "ONLINE",
   "mode": "ornith/ornith-1.5-122b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-01T18:30:12Z"
+  "lastUpdate": "2026-11-01T19:00:28Z"
 }
