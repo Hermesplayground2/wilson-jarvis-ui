@@ -1,15 +1,19 @@
 [
   {
-    "time": "2026-11-01 12:00:15",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+    "time": "2026-11-01 12:30:12",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-01 12:00:14",
+    "time": "2026-11-01 12:30:12",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-01 12:00:14",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+    "time": "2026-11-01 12:00:28",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
+    "time": "2026-11-01 12:00:15",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-11-01 12:00:13",
@@ -22,10 +26,6 @@
   {
     "time": "2026-11-01 12:00:12",
     "text": "RUM Trigger Newsletter \u2014 BLOCKED (configuration)"
-  },
-  {
-    "time": "2026-11-01 11:30:26",
-    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-01 10:00:14",
