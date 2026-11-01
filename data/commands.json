@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-01 06:30:41",
+    "time": "2026-11-01 07:00:42",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 07:00:41",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 07:00:41",
+    "text": "RUM Trigger Newsletter \u2014 BLOCKED (configuration)"
+  },
+  {
+    "time": "2026-11-01 07:00:41",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 06:45:41",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-01 06:30:41",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+    "time": "2026-11-01 06:45:41",
+    "text": "RUM Monitor \u2014 BLOCKED (configuration)"
+  },
+  {
+    "time": "2026-11-01 06:30:51",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-01 06:07:00",
     "text": "Pembina daily events feeder"
-  },
-  {
-    "time": "2026-11-01 06:00:54",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-11-01 06:00:41",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 06:00:41",
-    "text": "Free models availability monitor \u2014 script failed"
-  },
-  {
-    "time": "2026-11-01 06:00:41",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-10-31 20:01:21",
-    "text": "RUM Trigger Newsletter"
   }
 ]
