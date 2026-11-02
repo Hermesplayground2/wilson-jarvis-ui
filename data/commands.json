@@ -1,23 +1,27 @@
 [
   {
+    "time": "2026-11-01 20:31:00",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 20:16:00",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-01 20:01:50",
+    "text": "RUM Trigger Newsletter"
+  },
+  {
+    "time": "2026-11-01 20:01:11",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
     "time": "2026-11-01 20:01:01",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-11-01 20:01:00",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 20:01:00",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 19:46:00",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-01 19:31:14",
-    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-01 18:46:00",
@@ -26,9 +30,5 @@
   {
     "time": "2026-11-01 18:00:02",
     "text": "Free models availability monitor \u2014 script failed"
-  },
-  {
-    "time": "2026-11-01 12:00:12",
-    "text": "RUM Trigger Newsletter \u2014 BLOCKED (configuration)"
   }
 ]
