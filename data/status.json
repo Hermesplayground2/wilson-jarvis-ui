@@ -1,9 +1,9 @@
 {
-  "memory": 400,
+  "memory": 850,
   "memoryMax": 2800,
   "skills": 236,
   "status": "ONLINE",
-  "mode": "stepfun/step-3.7-flash",
+  "mode": "nvidia/nemotron-3-ultra-550b-a55b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-02T22:00:15Z"
+  "lastUpdate": "2026-11-02T22:30:12Z"
 }
