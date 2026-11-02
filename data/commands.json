@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-02 14:51:45",
+    "time": "2026-11-02 15:00:41",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-02 14:51:45",
-    "text": "PhoneDx Bot auto-scan + notify"
-  },
-  {
-    "time": "2026-11-02 14:51:44",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-02 14:51:44",
-    "text": "Free models availability monitor \u2014 script failed"
-  },
-  {
-    "time": "2026-11-02 14:51:44",
-    "text": "Paid-outcome gate \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-02 14:51:43",
+    "time": "2026-11-02 15:00:40",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-02 14:51:41",
-    "text": "stock catalyst brief \u2014 silent (empty output)"
+    "time": "2026-11-02 15:00:40",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-01 21:01:16",
-    "text": "Jarvis dashboard data refresh"
+    "time": "2026-11-02 15:00:40",
+    "text": "PhoneDx Bot auto-scan + notify"
+  },
+  {
+    "time": "2026-11-02 15:00:40",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-02 14:58:02",
+    "text": "Pembina daily events feeder"
+  },
+  {
+    "time": "2026-11-02 14:52:18",
+    "text": "RUM Monitor (FAILED)"
+  },
+  {
+    "time": "2026-11-02 14:52:18",
+    "text": "Daily Jarvis Brief (FAILED)"
   }
 ]
