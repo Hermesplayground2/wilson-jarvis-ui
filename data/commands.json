@@ -1,7 +1,23 @@
 [
   {
-    "time": "2026-11-03 06:00:16",
+    "time": "2026-11-03 06:30:16",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-03 06:30:15",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-03 06:06:41",
+    "text": "Pembina daily events feeder"
+  },
+  {
+    "time": "2026-11-03 06:00:44",
+    "text": "Free models availability monitor \u2014 script failed"
+  },
+  {
+    "time": "2026-11-03 06:00:27",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-03 06:00:16",
@@ -9,26 +25,10 @@
   },
   {
     "time": "2026-11-03 06:00:15",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-03 06:00:15",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-03 05:30:24",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-11-03 00:00:41",
-    "text": "Free models availability monitor \u2014 script failed"
   },
   {
     "time": "2026-11-02 20:00:19",
     "text": "RUM Trigger Newsletter (FAILED)"
-  },
-  {
-    "time": "2026-11-02 19:30:19",
-    "text": "Daily Wilson recap (FAILED)"
   }
 ]
