@@ -1,9 +1,9 @@
 {
-  "memory": 850,
+  "memory": 875,
   "memoryMax": 2800,
   "skills": 237,
   "status": "ONLINE",
-  "mode": "llama3.2:3b",
+  "mode": "nvidia/nemotron-3-ultra-550b-a55b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-02T23:30:13Z"
+  "lastUpdate": "2026-11-03T00:00:13Z"
 }
