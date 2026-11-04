@@ -1,15 +1,23 @@
 [
   {
-    "time": "2026-11-04 07:00:10",
+    "time": "2026-11-04 07:30:09",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-04 07:30:09",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-04 07:07:18",
+    "text": "RUM Trigger Newsletter"
+  },
+  {
+    "time": "2026-11-04 07:00:22",
+    "text": "Jarvis dashboard data refresh"
   },
   {
     "time": "2026-11-04 07:00:09",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-04 07:00:09",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
     "time": "2026-11-04 07:00:09",
@@ -20,15 +28,7 @@
     "text": "RUM Monitor (FAILED)"
   },
   {
-    "time": "2026-11-04 06:30:22",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
     "time": "2026-11-04 06:06:29",
     "text": "Pembina daily events feeder"
-  },
-  {
-    "time": "2026-11-04 06:00:49",
-    "text": "Free models availability monitor \u2014 script failed"
   }
 ]
