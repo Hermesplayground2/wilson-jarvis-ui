@@ -1,23 +1,27 @@
 [
   {
-    "time": "2026-11-03 19:30:11",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-03 19:15:11",
+    "time": "2026-11-03 20:00:12",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-03 19:00:24",
-    "text": "Jarvis dashboard data refresh"
-  },
-  {
-    "time": "2026-11-03 19:00:11",
+    "time": "2026-11-03 20:00:11",
     "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-03 19:00:11",
+    "time": "2026-11-03 20:00:11",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-03 20:00:11",
     "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-03 19:30:23",
+    "text": "Jarvis dashboard data refresh"
+  },
+  {
+    "time": "2026-11-03 19:30:14",
+    "text": "Daily Wilson recap (FAILED)"
   },
   {
     "time": "2026-11-03 18:45:13",
@@ -26,9 +30,5 @@
   {
     "time": "2026-11-03 18:00:56",
     "text": "Free models availability monitor \u2014 script failed"
-  },
-  {
-    "time": "2026-11-03 17:55:13",
-    "text": "PhoneDx Bot auto-scan + notify"
   }
 ]
