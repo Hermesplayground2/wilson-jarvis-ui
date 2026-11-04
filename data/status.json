@@ -1,9 +1,9 @@
 {
-  "memory": 925,
+  "memory": 1050,
   "memoryMax": 2800,
   "skills": 238,
   "status": "ONLINE",
-  "mode": "upstage/solar-mini4:free",
+  "mode": "ornith/ornith-1.5-122b:free",
   "queue": 22,
-  "lastUpdate": "2026-11-04T02:30:11Z"
+  "lastUpdate": "2026-11-04T03:00:12Z"
 }
