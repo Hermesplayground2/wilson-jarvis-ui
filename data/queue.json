@@ -1,6 +1,6 @@
 {
   "pending": 22,
-  "total": 38,
+  "total": 35,
   "items": [
     {
       "title": "wilson-memory-compaction",
@@ -12,10 +12,6 @@
     },
     {
       "title": "Daily Pembina Valley Events maintenance",
-      "status": "paused"
-    },
-    {
-      "title": "RUM SPCX news/price monitor",
       "status": "paused"
     },
     {
@@ -31,14 +27,6 @@
       "status": "paused"
     },
     {
-      "title": "RUM Trigger Newsletter",
-      "status": "enabled"
-    },
-    {
-      "title": "RUM Monitor",
-      "status": "enabled"
-    },
-    {
       "title": "Telegram Gateway Watchdog",
       "status": "enabled"
     },
@@ -48,6 +36,18 @@
     },
     {
       "title": "Memory Compaction Backup",
+      "status": "enabled"
+    },
+    {
+      "title": "Memory Compaction Verify",
+      "status": "enabled"
+    },
+    {
+      "title": "Daily Jarvis Brief",
+      "status": "enabled"
+    },
+    {
+      "title": "Wilson Self-Improvement Weekly",
       "status": "enabled"
     }
   ]
