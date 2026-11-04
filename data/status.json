@@ -1,9 +1,9 @@
 {
-  "memory": 950,
+  "memory": 925,
   "memoryMax": 2800,
   "skills": 240,
   "status": "ONLINE",
-  "mode": "ornith/ornith-1.5-122b:free",
+  "mode": "stealth/crouton-alpha",
   "queue": 22,
-  "lastUpdate": "2026-11-04T15:30:10Z"
+  "lastUpdate": "2026-11-04T16:00:10Z"
 }
