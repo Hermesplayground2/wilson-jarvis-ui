@@ -1,6 +1,6 @@
 [
   {
-    "text": "Topics tracked: 16",
+    "text": "Topics tracked: 17",
     "active": true
   },
   {
@@ -24,6 +24,10 @@
     "active": false
   },
   {
+    "text": "Topic: memory architecture",
+    "active": false
+  },
+  {
     "text": "Topic: models and providers",
     "active": false
   },
@@ -41,10 +45,6 @@
   },
   {
     "text": "Topic: phonedx broken screen",
-    "active": false
-  },
-  {
-    "text": "Topic: phonedx wireless adb",
     "active": false
   }
 ]
