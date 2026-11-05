@@ -1,7 +1,11 @@
 [
   {
-    "text": "Topics tracked: 17",
+    "text": "Topics tracked: 18",
     "active": true
+  },
+  {
+    "text": "Topic: adb quoting",
+    "active": false
   },
   {
     "text": "Topic: bible app",
@@ -41,10 +45,6 @@
   },
   {
     "text": "Topic: phonedx",
-    "active": false
-  },
-  {
-    "text": "Topic: phonedx broken screen",
     "active": false
   }
 ]
