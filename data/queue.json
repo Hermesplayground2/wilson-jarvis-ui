@@ -1,5 +1,5 @@
 {
-  "pending": 32,
+  "pending": 33,
   "total": 44,
   "items": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "title": "Daily Pembina Valley Events maintenance",
-      "status": "paused"
+      "status": "enabled"
     },
     {
       "title": "pembina maintenance check",
@@ -24,7 +24,7 @@
     },
     {
       "title": "jarvis-ui price refresh",
-      "status": "paused"
+      "status": "enabled"
     },
     {
       "title": "Telegram Gateway Watchdog",
