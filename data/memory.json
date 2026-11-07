@@ -1,10 +1,14 @@
 [
   {
-    "text": "Topics tracked: 18",
+    "text": "Topics tracked: 19",
     "active": true
   },
   {
     "text": "Topic: adb quoting",
+    "active": false
+  },
+  {
+    "text": "Topic: audio bench",
     "active": false
   },
   {
@@ -41,10 +45,6 @@
   },
   {
     "text": "Topic: phone recovery",
-    "active": false
-  },
-  {
-    "text": "Topic: phonedx",
     "active": false
   }
 ]
