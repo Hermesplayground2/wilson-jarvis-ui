@@ -1,6 +1,6 @@
 [
   {
-    "text": "Topics tracked: 19",
+    "text": "Topics tracked: 20",
     "active": true
   },
   {
@@ -32,6 +32,10 @@
     "active": false
   },
   {
+    "text": "Topic: iphone 11 pro",
+    "active": false
+  },
+  {
     "text": "Topic: memory architecture",
     "active": false
   },
@@ -41,10 +45,6 @@
   },
   {
     "text": "Topic: pembina",
-    "active": false
-  },
-  {
-    "text": "Topic: phone recovery",
     "active": false
   }
 ]
