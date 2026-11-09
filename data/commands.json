@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-09 11:00:36",
-    "text": "Heartbeat"
-  },
-  {
-    "time": "2026-11-09 11:00:36",
+    "time": "2026-11-09 11:30:36",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-09 11:00:36",
+    "time": "2026-11-09 11:30:36",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-09 11:00:36",
+    "time": "2026-11-09 11:30:36",
     "text": "PhoneDx Bot auto-scan + notify"
   },
   {
-    "time": "2026-11-09 11:00:36",
+    "time": "2026-11-09 11:30:36",
     "text": "Dashboard watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-09 11:00:36",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-09 11:00:36",
+    "time": "2026-11-09 11:30:35",
     "text": "Jarvis reminder check \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-09 11:00:35",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+    "time": "2026-11-09 11:30:35",
+    "text": "Bob watchdog supervisor \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-09 11:30:35",
+    "text": "jarvis-ui price refresh \u2014 script failed"
+  },
+  {
+    "time": "2026-11-09 11:00:50",
+    "text": "Jarvis dashboard data refresh"
   }
 ]
