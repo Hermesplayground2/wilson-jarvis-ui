@@ -1,9 +1,9 @@
 {
-  "memory": 300,
+  "memory": 800,
   "memoryMax": 2800,
   "skills": 258,
   "status": "ONLINE",
   "mode": "upstage/solar-mini4:free",
   "queue": 35,
-  "lastUpdate": "2026-11-13T04:00:28Z"
+  "lastUpdate": "2026-11-13T04:30:27Z"
 }
