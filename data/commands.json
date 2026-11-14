@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-14 13:30:19",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+    "time": "2026-11-14 14:00:19",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-14 13:30:18",
-    "text": "Dashboard watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-14 13:30:18",
-    "text": "Jarvis reminder check \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-14 13:23:18",
-    "text": "Bob watchdog supervisor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-14 13:15:18",
+    "time": "2026-11-14 14:00:19",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-14 13:00:33",
-    "text": "Jarvis dashboard data refresh"
+    "time": "2026-11-14 14:00:19",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-14 13:00:20",
-    "text": "Session checkpoint"
+    "time": "2026-11-14 14:00:18",
+    "text": "Dashboard watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-14 13:00:20",
-    "text": "Heartbeat \u2014 silent (empty output)"
+    "time": "2026-11-14 14:00:18",
+    "text": "Jarvis reminder check \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-14 14:00:18",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-14 13:56:19",
+    "text": "nous-rate-limit-retry-one-shot (FAILED)"
+  },
+  {
+    "time": "2026-11-14 13:56:18",
+    "text": "Bob watchdog supervisor \u2014 script failed"
   }
 ]
