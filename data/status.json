@@ -1,9 +1,9 @@
 {
-  "memory": 975,
+  "memory": 1025,
   "memoryMax": 2800,
   "skills": 267,
   "status": "ONLINE",
   "mode": "meituan/longcat-2.5:free",
-  "queue": 37,
-  "lastUpdate": "2026-11-15T14:30:15Z"
+  "queue": 38,
+  "lastUpdate": "2026-11-15T15:00:16Z"
 }
