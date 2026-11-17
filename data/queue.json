@@ -1,6 +1,6 @@
 {
-  "pending": 40,
-  "total": 53,
+  "pending": 48,
+  "total": 54,
   "items": [
     {
       "title": "wilson-memory-compaction",
@@ -16,7 +16,7 @@
     },
     {
       "title": "pembina maintenance check",
-      "status": "paused"
+      "status": "enabled"
     },
     {
       "title": "stock catalyst brief",
