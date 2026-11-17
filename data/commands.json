@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-17 08:00:20",
-    "text": "Silver level monitor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 08:00:20",
-    "text": "Dashboard watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 08:00:20",
-    "text": "daily outcomes"
-  },
-  {
-    "time": "2026-11-17 08:00:20",
-    "text": "Jarvis reminder check \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 08:00:20",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 08:00:20",
+    "time": "2026-11-17 08:30:20",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 08:00:20",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+    "time": "2026-11-17 08:30:20",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 07:59:19",
+    "time": "2026-11-17 08:30:19",
+    "text": "Dashboard watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 08:30:19",
+    "text": "Jarvis reminder check \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 08:29:19",
     "text": "Wilson voice keep-alive \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 08:10:20",
+    "text": "Wilson bridge daily digest"
+  },
+  {
+    "time": "2026-11-17 08:01:12",
+    "text": "Watchlist daily summary"
+  },
+  {
+    "time": "2026-11-17 08:00:30",
+    "text": "Jarvis dashboard data refresh"
   }
 ]
