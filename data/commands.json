@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-17 06:00:21",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 06:00:20",
-    "text": "Silver level monitor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 06:00:20",
-    "text": "Dashboard watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 06:00:20",
-    "text": "Spend watchdog (Nous Portal) \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 06:00:20",
+    "time": "2026-11-17 06:30:20",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 06:00:20",
-    "text": "Jarvis reminder check"
+    "time": "2026-11-17 06:30:20",
+    "text": "Dashboard watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 06:00:20",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+    "time": "2026-11-17 06:30:19",
+    "text": "Jarvis reminder check \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 06:00:12",
+    "time": "2026-11-17 06:30:19",
+    "text": "Daily Bible verse + lexicon card"
+  },
+  {
+    "time": "2026-11-17 06:29:19",
+    "text": "Wilson voice keep-alive \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 06:15:19",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 06:02:47",
+    "text": "Pembina daily events feeder"
+  },
+  {
+    "time": "2026-11-17 06:00:48",
+    "text": "Book scanner"
   }
 ]
