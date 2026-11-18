@@ -1,17 +1,17 @@
 [
   {
     "symbol": "SLV",
-    "price": 41.42,
-    "change": -2.86
+    "price": 41.31,
+    "change": -3.12
   },
   {
     "symbol": "SPCX",
-    "price": 142.9,
-    "change": 0.85
+    "price": 142.4775,
+    "change": 0.55
   },
   {
     "symbol": "RUM",
-    "price": 4.97,
-    "change": 1.12
+    "price": 5.0,
+    "change": 1.73
   }
 ]
