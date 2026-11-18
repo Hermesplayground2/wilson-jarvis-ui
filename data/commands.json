@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-17 22:00:17",
-    "text": "Silver level monitor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 22:00:17",
-    "text": "Wilson PWA watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 22:00:17",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 22:00:17",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 22:00:16",
-    "text": "Dashboard watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-17 22:00:16",
+    "time": "2026-11-17 22:30:16",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 22:00:16",
+    "time": "2026-11-17 22:30:16",
+    "text": "Local servers watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 22:30:16",
+    "text": "Dashboard watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 22:30:16",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 22:30:16",
     "text": "Jarvis reminder check \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-17 22:00:15",
-    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+    "time": "2026-11-17 22:29:15",
+    "text": "Wilson voice keep-alive \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-17 22:28:15",
+    "text": "Jarvis research relay \u2014 no_change (agent run suppressed)"
+  },
+  {
+    "time": "2026-11-17 22:00:57",
+    "text": "Wilson voice key relay"
   }
 ]
