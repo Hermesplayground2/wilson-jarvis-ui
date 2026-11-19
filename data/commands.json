@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-18 23:30:09",
-    "text": "Dashboard watchdog \u2014 silent (empty output)"
+    "time": "2026-11-19 11:42:29",
+    "text": "Heartbeat"
   },
   {
-    "time": "2026-11-18 23:30:08",
-    "text": "Jarvis reminder check \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-18 23:29:08",
-    "text": "Wilson voice keep-alive \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-18 23:28:08",
-    "text": "Jarvis research relay \u2014 no_change (agent run suppressed)"
-  },
-  {
-    "time": "2026-11-18 23:25:16",
-    "text": "Local servers watchdog"
-  },
-  {
-    "time": "2026-11-18 23:25:08",
+    "time": "2026-11-19 11:42:27",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-18 23:15:08",
-    "text": "Wilson health board \u2014 silent (empty output)"
+    "time": "2026-11-19 11:42:27",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-18 23:15:08",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+    "time": "2026-11-19 11:42:26",
+    "text": "Spend watchdog (Nous Portal) \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-19 11:42:26",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-19 11:42:26",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-19 11:42:26",
+    "text": "Paid-outcome gate \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-19 11:42:25",
+    "text": "Daily Bible verse + lexicon card"
   }
 ]
