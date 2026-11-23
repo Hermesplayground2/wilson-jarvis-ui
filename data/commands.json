@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-23 06:16:45",
-    "text": "Heartbeat"
+    "time": "2026-11-23 06:30:40",
+    "text": "Local servers watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-23 06:16:44",
-    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-23 06:16:44",
-    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-23 06:16:44",
-    "text": "Silver level monitor \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-23 06:16:44",
-    "text": "Spend watchdog (Nous Portal) \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-23 06:16:44",
-    "text": "Rate-limit watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-23 06:16:44",
+    "time": "2026-11-23 06:30:40",
     "text": "Dashboard watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-23 06:16:44",
-    "text": "Jarvis reminder check"
+    "time": "2026-11-23 06:30:40",
+    "text": "bible-comment-notify-silent \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-23 06:30:40",
+    "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-23 06:30:39",
+    "text": "Jarvis reminder check \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-23 06:30:39",
+    "text": "Daily Bible verse + lexicon card"
+  },
+  {
+    "time": "2026-11-23 06:28:41",
+    "text": "Wilson voice keep-alive \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-23 06:18:48",
+    "text": "Pembina daily events feeder"
   }
 ]
