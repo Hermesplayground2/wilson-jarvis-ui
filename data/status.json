@@ -1,9 +1,9 @@
 {
-  "memory": 950,
+  "memory": 900,
   "memoryMax": 2800,
   "skills": 270,
   "status": "ONLINE",
-  "mode": "meituan/longcat-2.5:free",
+  "mode": "tencent/hy4-flash:free",
   "queue": 48,
-  "lastUpdate": "2026-11-24T21:30:41Z"
+  "lastUpdate": "2026-11-24T22:00:41Z"
 }
