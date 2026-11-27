@@ -1,9 +1,9 @@
 {
-  "memory": 875,
+  "memory": 925,
   "memoryMax": 2800,
   "skills": 270,
   "status": "ONLINE",
-  "mode": "stepfun/step-3.7-flash:free",
+  "mode": "tencent/hy4-flash:free",
   "queue": 51,
-  "lastUpdate": "2026-11-27T10:30:21Z"
+  "lastUpdate": "2026-11-27T11:00:22Z"
 }
