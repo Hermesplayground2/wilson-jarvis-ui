@@ -1,6 +1,6 @@
 {
-  "pending": 52,
-  "total": 62,
+  "pending": 59,
+  "total": 63,
   "items": [
     {
       "title": "wilson-memory-compaction",
@@ -48,7 +48,7 @@
     },
     {
       "title": "Wilson Self-Improvement Weekly",
-      "status": "paused"
+      "status": "enabled"
     }
   ]
 }
