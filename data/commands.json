@@ -1,34 +1,34 @@
 [
   {
-    "time": "2026-11-27 17:30:42",
-    "text": "Local servers watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-27 17:30:42",
+    "time": "2026-11-27 18:00:42",
     "text": "bible-comment-notify-silent \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-27 17:30:42",
+    "time": "2026-11-27 18:00:42",
     "text": "Dashboard watchdog \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-27 17:30:42",
-    "text": "Signal gatekeeper \u2014 silent (empty output)"
+    "time": "2026-11-27 18:00:41",
+    "text": "Spend watchdog (Nous Portal) \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-27 17:30:42",
+    "time": "2026-11-27 18:00:41",
     "text": "Jarvis reminder check \u2014 silent (empty output)"
   },
   {
-    "time": "2026-11-27 17:30:41",
+    "time": "2026-11-27 18:00:41",
+    "text": "Signal gatekeeper \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-27 18:00:41",
+    "text": "Delegation delivery watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-27 18:00:41",
+    "text": "Rate-limit watchdog \u2014 silent (empty output)"
+  },
+  {
+    "time": "2026-11-27 18:00:41",
     "text": "Telegram Gateway Watchdog \u2014 silent (empty output)"
-  },
-  {
-    "time": "2026-11-27 17:28:48",
-    "text": "Jarvis research relay \u2014 no_change (agent run suppressed)"
-  },
-  {
-    "time": "2026-11-27 17:27:30",
-    "text": "PhoneDx Bot auto-scan + notify"
   }
 ]
