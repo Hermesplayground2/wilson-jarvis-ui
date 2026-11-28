@@ -1,9 +1,9 @@
 {
-  "memory": 850,
+  "memory": 575,
   "memoryMax": 2800,
   "skills": 270,
   "status": "ONLINE",
   "mode": "tencent/hy4-flash:free",
   "queue": 59,
-  "lastUpdate": "2026-11-28T05:30:40Z"
+  "lastUpdate": "2026-11-28T14:10:13Z"
 }
